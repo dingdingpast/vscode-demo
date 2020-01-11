@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>Document</title>
+    <style type="text/css">
+        .box{
+            width: 500px;
+            height: 500px;
+            background-image: url("xm/0.png");
+            background-size: 100%;
+            
+            animation: picture 5s linear infinite;
+
+        }
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+            /*  动画调用：animation属性用于控制动画
+                         name duration(m|ms)动画完成一个周期所需时间 
+                         timing-function函数，规定动画的速度变化类型 
+                         delay(m|ms)播放之前的延迟 
+                         iteration-count轮播次数
+                         direction轮播方向；
+                动画子属性：
+                         animation-iteration-count: 数值|infinite; 播放次数（infinite表示无限次播放）
+                         animation-direction: normal|alternate; 动画播放方向，normal为默认正常播放、alternate表示轮流播放（奇数次正常播放，偶数次向后播放,就是播放顺序为1234.. ..4321 1234..）
+                         animation-fill-mode: forwards;动画停在最后一帧。
+                         animation-play-state:paused|running;规定动画运行、暂停（默认为running）
+            */
+        
+        @keyframes picture {
+            0%{
+                background-image: url("xm/0.png");
+            }
+            25%{
+                background-image: url("xm/1.jpg");
+            }
+            50%{
+                background-image: url("xm/2.jpg");
+            }
+            75%{
+                background-image: url("xm/3.jpg");
+            }
+            100%{
+                background-image: url("xm/4.jpg");
+            }
+        }
+        .bbk {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 94px;
+            border: 1px solid pink;
+            border-radius: 50%;
+            animation: bbks 5s linear infinite alternate;
+            cursor: pointer;
+        }
+        @keyframes bbks {
+            0%{
+                margin-left: 500px;
+
+            }
+            100%{
+                margin-left: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="bbk"></div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+.nav{
+  width: 100%;
+  height: 103px;
+  border-bottom: 1px solid #d5d5d5;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: #ffffff;
+}
+.wrap{
+  width: 1196px;
+  margin: 0 auto;
+}
+li{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+.logo{
+  width: 195px;
+}
+.logo{
+  float: left;
+}
+.nav_right{
+  float: left;
+}
+.logo>img{
+  margin-top: 25px;
+}
+.nav_right{
+  width: 991px;
+  height: 103px;
+}
+.enter{
+  width: 100%;
+  height: 1px;
+  line-height: 1px;
+}
+.nav_right ul{
+  float: right;
+}
+.nav_right ul li{
+  float: left;
+}
+.nav_right ul a{
+  margin: 0 10px;
+  color: #9f9f9f;
+}
+.enter ul li:first-child a{
+  color: #ef4222;
+}
+.nav_right ul li a:hover{
+  color: #ef4222;
+}
+.home{
+  width: 100%;
+  height: 63px;
+  line-height: 63px;
+}
+.home>ul a{
+  color: #000;
+  margin-left: 52px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.search{
+  width: 170px;
+  height: 30px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  padding-left: 0px;
+  margin-top: 16.5px;
+  margin-left: 120px;
+}
+.search>input{
+  width: 140px;
+  height: 23px;
+  float: left;
+}
+.search>button{
+  width: 22px;
+  height: 20px;
+  float: left;
+  background-color: #fff;
+  border: none;
+}
+.phone_hidden{
+  width: 100%;
+  height: 260px;
+  background-color: rgb(255, 255, 255,0.8);
+  position: absolute;
+  left: 0;
+  top: 104px;
+  display: none;
+}
+.home .phone:hover .phone_hidden{
+  display: block;
+}
+/* 轮播图样式开始 */
+.runabout {
+  width: 100%;
+  height: 640px;
+  background-image: url("../jinli_images/02_1517536570441.jpg");
+  background-repeat:no-repeat;
+  background-position:center center;
+  margin-top: 104px;
+  animation: runabout 5s infinite alternate ;
+}
+@keyframes runabout {
+  0%{
+    background-image: url("../jinli_images/02_1517536570441.jpg");
+  }
+  25%{
+    background-image: url("../jinli_images/02_1517536570441.jpg");
+  }
+  50%{
+    background-image: url("../jinli_images/02_1517536570441.jpg");
+  }
+  75%{
+    background-image: url("../jinli_images/04_1515047442501.jpg");
+  }
+  100%{
+    background-image: url("../jinli_images/04_1515047442501.jpg");
+  }
+}
+/* 轮播图结束 */
+.star {
+  widows: 100%;
+  height: 451px;
+  
+  text-align: center;
+}
+.star h2 {
+  padding: 40px 0;
+  font-size: 35px;
+  letter-spacing: 18px;
+  color: #000;
+}
+.img_box>img{
+  float: left;
+}
+.img_box>img:nth-child(2){
+  margin-left: 13px;
+  margin-right: 13px;
+}

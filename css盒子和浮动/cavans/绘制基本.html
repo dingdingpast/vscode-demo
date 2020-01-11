@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>Document</title>
+    <style type="text/css">
+        canvas {
+            top: 200px;
+            left: 200px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500px" height="500px">
+        您的浏览器版本过低或者不支持此类型文档
+    </canvas>
+    <script type="text/javascript">
+        // 获得画布id，固定语句
+        var canvas = document.getElementById('canvas');
+        var c = canvas.getContext('2d');
+        // 开始绘画
+        c.strokeStyle = "#00ff00"; //strokeStyle设置颜色、渐变或模式。
+        // c.lineWidth=3;            //lineWidth设置线条宽度。
+        // c.moveTo(300,0);            //moveTo定义绘制起点。
+        // c.lineTo(300,200);        //lineTo添加一个新的点。
+        // c.stroke();               //stroke绘制已定义的路径。
+        // // 直线绘画完成
+        // c.moveTo(300,200)
+        // c.lineTo(0,200)
+        // c.lineTo(0,0)
+        // c.stroke();
+        //三角形绘制完成
+        c.moveTo(10, 10);
+        c.lineTo(10, 100);
+        c.lineTo(100, 100);
+        c.lineTo(100, 10);
+        c.closePath(); //从当前点回到起始点闭合当前路径
+        c.stroke();
+        //正方形绘制完成
+        c.beginPath(); //用来创建新的路径
+        c.strokeStyle = "blue";
+        c.rect(5, 5, 100, 100); //rect(x,y,w,h)创建一个矩形
+        c.stroke();
+        //画了新的蓝正方形
+        c.beginPath();
+        c.strokeStyle = "red";
+        c.strokeRect(1, 1, 108, 108); //strokeRect(x,y,w,hx,y,w,h)绘制矩形，无填充
+        //画了新的红正方形
+        c.beginPath();
+        c.rect(15, 15, 80, 80);
+        c.fill(); //fill绘制一个实心的（带填充的）图形
+        //fillRect绘制“被填充的图形
+    </script>
+    <pre>总结：
+            canvas元素绘制图像的时候有两种方法，分别是
+
+            context.fill()//填充
+    
+            context.stroke()//绘制边框
+    
+        style:在进行图形绘制前，要设置好绘图的样式
+    
+            context.fillStyle//填充的样式
+    
+            context.strokeStyle//边框样式
+   
+        context.lineWidth//图形边框宽度
+    
+        颜色的表示方式:
+    
+             直接用颜色名称:"red" "green" "blue"
+    
+             十六进制颜色值: "#EEEEFF"
+    
+             rgb(1-255,1-255,1-255)
+    
+             rgba(1-255,1-255,1-255,透明度)
+ 
+</body>
+</html>

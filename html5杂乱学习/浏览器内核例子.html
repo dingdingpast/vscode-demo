@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>id</title>
+    <style media="screen">
+      div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        /* transition: 数值（过度效果）; */
+        -webkit-transition:0.3s;
+        /* 谷歌支持 */
+        -moz-transition:0.3s;
+        /* 火狐支持 */
+        -ms-transition:0.3s;
+        /* ie10及以上支持 */
+        -o-transition:0.3s;
+        /* opera */
+        transition: 0.3s;
+        /* w3c标准 */
+      }
+      body:hover div{
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
