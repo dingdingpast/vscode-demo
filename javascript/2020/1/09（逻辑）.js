@@ -37,32 +37,3 @@ function myFunction() {
 // toSource():      返回该对象的源代码
 // toString():      把逻辑值转换为字符串，并返回结果
 // valueOf():       返回Boolean对象的原始值
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*963-
