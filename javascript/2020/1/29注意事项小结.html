@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <title>JavaScript最佳实践</title>
+    </head>
+    <body>
+        <pre>
+            避免全局变量（new、===、eval（））： a = b;是全局变量。 var a = b;是局部变量
+                它包括所有的数据类型、对象和函数。全局变量和函数可能被其他脚本覆盖。
+            在顶部声明(默认将所有声明提升到顶部)：如在顶部声明循环变量 i
+                获得更整洁的代码。
+                提供了查找局部变量的好位置。
+                更容易避免不需要的全局变量。
+                减少不需要的重新声明的可能性。
+            初始化变量：
+                更整洁的代码。
+                在单独的位置初始化变量。
+                避免未定义值。
+            不要声明数值、字符串和布尔对象（对象无法进行比较）：
+                如果将这些类型声明为对象，会拖慢执行速度并产生副作用。
+            不要使用new Object()：
+                请使用 {} 来代替 new Object()
+                请使用 "" 来代替 new String()
+                请使用 0 来代替 new Number()
+                请使用 false 来代替 new Boolean()
+                请使用 [] 来代替 new Array()
+                请使用 /()/ 来代替 new RegExp()
+                请使用 function (){}来代替 new Function()
+            使用Paramet Defaults
+                如果调用函数缺参则会设值为undefined，设置默认值(function myFunction(x,y) {if (y === undefined) {y = 0;}}。
+            使用default结束switch
+            避免使用eval()：
+                eval()函数用于将文本作为代码来允许，在大部分情况下没有使用的必要。因为允许任意代码运行，意味着安全问题。
+        </pre>
+    </body>
+</html>
