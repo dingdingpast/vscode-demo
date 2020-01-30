@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        <b>表单验证
+            提交表单时验证某个输入框是否正确
+            internet Explorer 9 或更新版本支持required（防止空白表单被提交）
+            典型验证任务：
+                用户是否已填写所有必需的字段
+                是否已输入有效的日期
+                是否在数字字段输入了文本
+            服务器端验证和客户端验证
+            HTML5引入了约束认证：
+                HTML输入属性（disabled、max、min、pattern、requid、type等）
+                css伪选择器（:disabled、:invaild、:optional、:required、:valid等）
+                DOM属性和方法(validity、validationMessage、willValidate | checkValidity()、setCustomValidity())
+        </b>
+    </pre>
+    <!-- <form name="myForm" onsubmit="return validateForm()" method="post">
+        姓名：<input type="text" name="fname">
+        <input type="submit" value="Submit">
+    </form> -->
+
+    <input id="inpSub" required>
+    <button type="submit" value="Submit" onclick="inpFunc()">提交</button>
+
+    <script>
+        //  function validateForm() {
+        //      var x = document.forms["myForm"]["fname"].value;
+        //      if (x == "") {
+        //          alert ("您未填写姓名！");
+        //          return false
+        //      }
+        //  }
+
+            function inpFunc() {
+                var x,text;
+                x = document.getElementById("inpSub").value;
+
+                if (isNaN(x) || x < 1 || x > 10) {
+                    text = "无效";
+                }else {
+                    text = "有效";
+                }
+                alert (text);
+            }
+    </script>
+</body>
+</html>
