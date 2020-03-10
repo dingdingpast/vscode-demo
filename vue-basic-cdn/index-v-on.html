@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<title>v-on  @</title>
+		<style>
+			.canvas{
+				width: 500;
+				padding: 200px 20px;
+				text-align: center;
+				border: 1px solid #333 ;
+				}
+		</style>
+	</head>
+
+	<body>
+		<div id="vue-app">
+			<h1>Events</h1>
+			<button @click="add(1)">add</button>
+			<button v-on:click="dec(1)">dec</button>
+			<button @dblclick="add(10)">add10</button>
+			<button v-on:dblclick="dec(10)">dec10</button>
+			<p>设置年龄：{{ age }}</p>
+			<div id="canvas" @mousemove="updateXY">
+				{{ X }},{{ Y }}
+			</div>
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el: '#vue-app',
+				data() {
+					return {
+						age:20,
+						X:0,
+						Y:0,
+					};
+				},
+				methods: {
+					add(add) {
+						this.age += add;
+					},
+					dec(dec) {
+						this.age -= dec;
+					},
+					updateXY(event) {
+						this.X = event.offsetX;
+						this.Y = event.offsetY;
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

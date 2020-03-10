@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>vue basic cdn</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+		<p v-html="websiteTag"></p><br />
+		<a b-bind:href="website">百度</a>
+        {{ message }}--{{ greet('晚上') }}
+		<p ></p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data() {
+				return {
+					name:'丁丁',
+					qq:'929372284',
+					website:'https://www.baidu.com',
+					websiteTag:'<a href="https://www.baidu.com">百度</a>'
+				};
+			},
+			methods: {
+				greet(time) {
+					return `${time}好 ${this.name} ${this.qq}`;
+				}
+			}
+        });
+    </script>
+</body>
+</html>
