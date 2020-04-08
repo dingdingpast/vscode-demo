@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-ua-compatiale" content="ie=edge">
+    <tittle>Document Object Model</titlle>
+        <script>
+            // document.getElementById('demo').innerHTML = "Hello World!";//获取id为demo的元素并改变内容。
+            
+            var x = document.getElementByTagName("p");//查找所有<p>元素
+            
+            var y = document.querySelectorAll("p.deco");//返回class = "deco"的所有<p>元素列表（css类选择器）；ps：不适用IE8及其更早的版本。
+            
+            var z = document.forms["frm1"];
+            var text = "";
+             var i;
+            for (i = 0; i < z.length; i++) {
+                text += z.elements[i].value + "<br />"
+            }
+            document.getElementById("demo").innerHTML = text;//通过html对象选择器查找id为frm1的form元素在forms集合中，然后显示所有元素值。
+
+            document.getElementsById("ddd").src = "https://hbimg.huabanimg.com/684020429791ff013c713427dfa6f9e932ba83662bb12-XIcFkT_fw658";//改变id为ddd的img的属性。
+
+            document.getElementById("demo").style.color = "blue";//改变了id为demo的元素的样式
+        </script>
+        
+        <style>
+            .iii {
+                font-family: PingFangSC-Regular, Verdana, Arial, 微软雅黑, 宋体;
+                font-size: 14px;
+                text-align: left;
+                float: left;
+                margin: 0;
+                padding: 30px 0 0 0;
+                border: 0;
+                width: 850px;
+                background: transparent;
+            }
+        </style>
+</head>
+
+<body>
+    <div class="deco">
+        <pre>
+        javascript能够通过HTML DOM访问和改变HTML文档的所有元素。
+        当网页被加载时，浏览器会创建页面的文档对象模型
+        HTML DOM 模型被结构化为对象数:
+        <div><img id="ddd" src="https://www.w3school.com.cn/i/ct_htmltree.gif"></div>
+        通过这个对象模型，JavaScript获得创建动态HTML的所有力量：
+        <ul>
+            <li>JavaScript能改变页面中的所有HTML元素</li>
+            <li>JavaScript能改变页面中的所有HTML属性</li>
+            <li>JavaScript能改变页面中的所有css样式</li>
+            <li>JavaScript能删除已有的HTML元素和属性</li>
+            <li>JavaScript能添加新的HTML元素和属性</li>
+            <li>JavaScript能对页面中所有已有的HTML事件作出反应</li>
+            <li>JavaScript能在页面中创建新的HTML事件</li>
+        </ul>
+        document对象，文档对象代表网页，如果希望访问HTML中的任何元素，那么是从document对象开始。
+        getElementById方法找到HTML里的元素id，innerHTML属性获取或改变任何HTML元素(包括html和body)
+        <p id="demo">"demo生效则不会显示此文本"</p>
+    </pre>
+    </div>
+    <div class="iii">
+        <h2>查找 HTML 对象</h2>
+
+        <p>首个 HTML DOM Level 1 (1998)，定义了 11 个 HTML 对象、对象集合和属性。它们在 HTML5 中仍然有效。</p>
+
+        <p>后来，在 HTML DOM Level 3，加入了更多对象、集合和属性。</p>
+
+        <table class="dataintable">
+            <tbody>
+                <tr>
+                    <th>属性</th>
+                    <th>描述</th>
+                    <th>DOM</th>
+                </tr>
+
+                <tr>
+                    <td>document.anchors</td>
+                    <td>返回拥有 name 属性的所有 &lt;a&gt; 元素。</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.applets</td>
+                    <td>返回所有 &lt;applet&gt; 元素<span class="deprecated">（HTML5 不建议使用）</span></td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.baseURI</td>
+                    <td>返回文档的绝对基准 URI</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.body</td>
+                    <td>返回 &lt;body&gt; 元素</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.cookie</td>
+                    <td>返回文档的 cookie</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.doctype</td>
+                    <td>返回文档的 doctype</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.documentElement</td>
+                    <td>返回 &lt;html&gt; 元素</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.documentMode</td>
+                    <td>返回浏览器使用的模式</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.documentURI</td>
+                    <td>返回文档的 URI</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.domain</td>
+                    <td>返回文档服务器的域名</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.domConfig</td>
+                    <td><span class="deprecated">废弃。</span>返回 DOM 配置</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.embeds</td>
+                    <td>返回所有 &lt;embed&gt; 元素</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.forms</td>
+                    <td>返回所有 &lt;form&gt; 元素</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.head</td>
+                    <td>返回 &lt;head&gt; 元素</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.images</td>
+                    <td>返回所有 &lt;img&gt; 元素</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.implementation</td>
+                    <td>返回 DOM 实现</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.inputEncoding</td>
+                    <td>返回文档的编码（字符集）</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.lastModified</td>
+                    <td>返回文档更新的日期和时间</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.links</td>
+                    <td>返回拥有 href 属性的所有 &lt;area&gt; 和 &lt;a&gt; 元素</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.readyState</td>
+                    <td>返回文档的（加载）状态</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.referrer</td>
+                    <td>返回引用的 URI（链接文档）</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.scripts</td>
+                    <td>返回所有 &lt;script&gt; 元素</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.strictErrorChecking</td>
+                    <td>返回是否强制执行错误检查</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>document.title</td>
+                    <td>返回 &lt;title&gt; 元素</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>document.URL</td>
+                    <td>返回文档的完整 URL</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
