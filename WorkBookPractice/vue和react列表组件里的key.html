@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写 React / Vue 项目时为什么要在列表组件中写 key，其作用是什么？</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for='i in dataList'>{{ i }}</div>
+        <div>{{ e }}</div>
+    </div>
+    <script>
+        /* dom节点数组：
+        [
+            '<div>1</div>', // id： A
+            '<div>2</div>', // id:  B
+            '<div>3</div>', // id:  C
+            '<div>4</div>', // id:  D
+            '<div>5</div>'  // id:  E
+        ]
+        */
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                e:'abcd',
+                dataList: [1, 2, 3, 4],
+            }
+        });
+        vm.dataList = [4, 1, 3, 5, 2] // 数据位置替换
+
+        /* 没有key的情况下，更改dataList数据位置替换后，dom节点数组：
+        [
+            '<div>4</div>', // id： A
+            '<div>1</div>', // id:  B
+            '<div>3</div>', // id:  C
+            '<div>5</div>', // id:  D
+            '<div>2</div>'  // id:  E
+        ]
+
+        //在有key的情况下，节点位置进行了交换，但是内容没有更新
+
+        //<div v-for='i in dataList' :key='i'>{{ i }}</div>
+        [
+            '<div>4</div>', // id： D
+            '<div>1</div>', // id:  A
+            '<div>3</div>', // id:  C
+            '<div>5</div>', // id:  E
+            '<div>2</div>'  // id:  B
+        ]
+        */
+        vm.dataList = [3, 4, 5, 6, 7] // 数据进行增删
+        
+        /*
+        // 1. 没有key的情况， 节点位置不变，内容也更新了
+        [
+            '<div>3</div>', // id： A
+            '<div>4</div>', // id:  B
+            '<div>5</div>', // id:  C
+            '<div>6</div>', // id:  D
+            '<div>7</div>' // id:  E
+        ]
+
+        // 2. 有key的情况， 节点删除了 A, B 节点，新增了 F, G 节点
+        [
+            '<div>3</div>', // id： C
+            '<div>4</div>', // id:  D
+            '<div>5</div>', // id:  E
+            '<div>6</div>', // id:  F
+            '<div>7</div>' // id:  G
+        ]
+
+        key是给每一个vnode的唯一id,可以依靠key,更准确, 更快的拿到oldVnode中对应的vnode节点。
+
+            1. 更准确
+            因为带key就不是就地复用了，在sameNode函数 a.key === b.key对比中可以避免就地复用的情况。所以会更加准确。
+
+            2. 更快
+            利用key的唯一性生成map对象来获取对应节点，比遍历方式更快。(这个观点，就是我最初的那个观点。从这个角度看，map会比遍历更快。)
+        */
+    </script>
+</body>
+
+</html>
