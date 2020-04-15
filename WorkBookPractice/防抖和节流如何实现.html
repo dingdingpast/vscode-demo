@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    <div id="demo">
     <pre>
         <div class="pink">
     1.防抖
@@ -75,6 +76,7 @@
         window.addEventListener('resize', throttle(sayHi));
     </p>
     </pre>
+    </div>
     <script>
         function throttle(fn) {
             let canRun = true;
@@ -91,6 +93,10 @@
             console.log(e.target.innerWidth, e.target.innerHeight);            
         }
         window.addEventListener('resize',throttle(sayHi));
+        document.getElementById('demo').onclick = function(){
+            alert('鼠标不要乱点')
+        }
+
     </script>
     </body>
 

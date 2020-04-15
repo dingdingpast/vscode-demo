@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get" action="">
+        <input type="text" value="请输入关键字" onfocus="focusInput(this)" onblur="blurInput(this)" /> 
+    </form>
+    <pre style="width:650px;height:auto;margin: 10px 10px 10px 10px;border: 1px solid #666;font-size: 18px;color: #666;">
+    内联元素：
+        span/strong/em/del/ins/label/a/sub/sup
+    块级元素：
+        div/hx/p/address/ul/ol/li/dl/dt/dd/table/form/fieldset/legend
+    内联块元素： 
+        input/img/select/textarea/iframe</pre>
+    <script type="text/javascript">
+        function focusInput(obj){
+            if(obj.value === '请输入关键字'){
+                obj.value = '';
+            }
+        }
+
+        function blurInput(obj){
+            if(obj.value === ''){
+                obj.value = '请输入关键字';
+            }
+        }
+        //如果输入框输入内容是 请输入关键字 则不起效果
+    </script>
+</body>
+</html>

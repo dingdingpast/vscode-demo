@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 学习</title>
+</head>
+
+<body>
+    <pre>
+    浏览器：
+
+        组成部分：
+            shell       内核
+                        内核：渲染rendering引擎/JS引擎
+
+        主流浏览器：
+        Google Chrome    webkit/blink
+        Safari           webkit
+        Firefox          gecko
+        IE               trident
+        Opera            presto（Opera浏览器属于360和昆仑万维）
+
+    CSS（cascading　style  sheet-层叠样式表）
+
+        选择器{
+            属性名：属性值;
+            属性名:属性值;
+        }
+        1.内联样式
+        2.内部样式表
+        3.外部样式表&lt;link rel="stylesheet" type="text/css" ref="css/index.css /&gt;"
+
+        id选择器：
+            只能有一个元素可以使用 css中写法 #id{ }
+
+        类选择器：
+            可以出现多次 css中写法 .class{ }
+
+        标签选择器：
+            选择元素渲染,写法如 div{ } h1{ } span{ }
+
+        通配符选择器：
+            选择所有元素 *{ }
+
+        属性选择器：
+            选定标签上的一个属性 [id]{选择页面所有拥有id名的元素设置样式} 在表单里应用较多。
+
+        权重=优先权：
+            !important 所占权重最高，慎用。 &lt;div&gt; { background-color:green !important}
+            !important > id > class | 属性选择器 > 标签 > 通配符*
+            CSS权重：
+                *                    0
+                标签，伪元素          1
+                class，属性，伪类     10
+                id                   100
+                内联样式              1000
+                ！important           正无穷
+
+                256进制
+
+                数学里》正无穷 = 正无穷 + 1
+                计算机里》正无穷 &lt; 正无穷 + 1
+
+        派生选择器  父子选择器 (nth:child)
+            p span{ }  ,   p .class{ }  ,  .class1 .class2{ }   ,  #id .class{ }   ,   #id p{ }
+
+        并类选择器：
+            .box{ } .box.box1{ } .box.box2{ } .box-big.box1{ } <div class="box box1"></div><div class="box box2"></div> <div class="box-big box1"></div>
+        
+        分组选择器：
+            input,
+            textarea{
+                outline:none;
+            }
+
+         小野老师总结的通用字体：
+             "Hiragino Sans GB","Microsoft Yahei",arial,\5b8b\4f53,"HelveticaNevu",Helvetica,STHeiTi,sans-serif;
+
+</pre>
+</body>
+
+</html>
