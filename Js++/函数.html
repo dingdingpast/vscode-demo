@@ -7,8 +7,49 @@
 </head>
 <body>
     <script>
-        //x,y 任意x 确定的y x自变量 y-> x函数
+        // x,y 任意x 确定的y x自变量 y-> x函数
         // y = f(x) 函数值就是确定的 有确定性
+        // 高内聚，低耦合-> 模块的单一责任制
+        // 解耦合 基于函数
+        var n = parseInt(window.prompt('请输入'))
+        if(n > 0){
+            // for(var i = 0; i < 10; i++){
+            //     console.log(i);
+            // }
+            test();
+        }
+        if(n > 10){
+            // for(var i = 0; i < 10; i++){
+            //     console.log(i);
+            // }n
+            test();
+        }
+        if(n > 20){
+            // for(var i = 0; i < 10; i++){
+            //     console.log(i);
+            // }
+            test();
+        }
+        
+        function test() {
+            for(var i = 0; i < 10; i++){
+                console.log(i);
+                
+            }
+        };
+
+        var weekday = window.prompt('请输入星期几');
+        var time = window.prompt('请输入上午或下午');
+
+        switch(weekday){
+            case '星期一':
+                if(time === '上午'){
+                    console.log('跑步');
+                }else if(time === '下午'){
+                    console.log('唱歌');
+                }
+                break;
+        }
     </script>
 </body>
 </html>

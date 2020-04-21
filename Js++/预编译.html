@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>预编译</title>
+    <!-- 屏蔽ico开始 -->
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <!-- 屏蔽ico结束 -->
+</head>
+<body>
+    <script>
+/*
+ *  预编译
+ *  1.检查通篇的语法错误
+ *  1.5.预编译的过程
+ *  2.解释一行，执行一行
+ * * * * * 代码开始 * * * * *
+ *  test();
+ *  function test(){console.log(1);}
+ * * * * * 代码结束 * * * * *
+ * 
+ *  函数声明整体提升到顶部，变量只有声明提升，赋值不提升:var a = 1; 其中var a 将提升到顶部，a = 1; 将留在原行执行。
+ * * * * * 代码开始 * * * * *
+   console.log(a);//function a (a) {...}
+   function a (a) {
+    var a = 1;
+    var a = function () {
+        a = 2;
+    }
+   }
+   var a = 3;
+ * * * * * 代码结束 * * * * *
+ *
+ * AO  Activation Object
+ *     活跃对象,函数上下文
+ * 1.寻找形参和变量声明
+ * 2.实参值赋值给形参
+ * 3.找函数声明，赋值
+ * 4.执行
+ * * * * * 代码开始 * * * * *
+    function test (a) {
+        console.log(a);
+        var a = 1;
+        console.log(a);
+        function a () {}
+        console.log(a);
+        var b = function () {}
+        console.log(b);
+        function d(){}
+    }
+    test(2);
+ * * * * * 代码结束 * * * * *
+ *
+ * * * * * 代码开始 * * * * *
+    function test (a,b) {
+        console.log(a);//1
+        c = 0;
+        var c;
+        a = 5;
+        b = 6;
+        console.log(b);//6
+        function b(){}
+        function d () {}
+        console.log(b);//6
+    }
+    test ( 1 );
+ * * * * * 代码结束 * * * * *
+ * 
+ * GO global object (GO就是window)
+ *    全局上下文
+ * GO = {
+ *  a:undefined -> function a(){} ->1;
+ * }
+ * * * * * 代码开始 * * * * *
+    var a = 1;
+    function a() {
+        console.log(2);//无执行打印
+        }
+    console.log(a);//1
+ * * * * * 代码结束 * * * * *
+ */
+
+    </script>
+</body>
+</html>
