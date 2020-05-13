@@ -6,23 +6,28 @@
     <title>斐波那契数列相关函数</title>
 </head>
 <body>
-      n  n1  n2  n3  n4  n5  n6
-      1   1   2   3   5   7  11
-
       <script>
-          
-          let n = parseInt(window.prompt('请输入您需要查询的第几位数字'));
-          let n1 = 1,
-              n2 = 1,
-              n3;
-            for(let i = 2; i < n; i++){
-                n3 = n1 + n2;
-                n1 = n2;
-                n3;
+          //for循环
+         let n = parseInt(window.prompt('请输入'));
+          // let n1 = 1,
+          //     n2 = 1,
+          //     n3;
+          //   if (n <= 0) {
+          //     console.log('输入错误');
+          //   }else{
+          //     for(let i = 2; i < n; i++){
+          //       n3 = n1 + n2;
+          //       n1 = n2;
+          //       n2 = n3;
+          //       n3;
+          //     }
+          //    }
+          //   console.log(n3);
+            //递归方法
+            function Fb(n) {
+              return Fb(n - 1) + Fb(n - 2);
             }
-
-            console.log(n3);
-            
+            Fb();
       </script>
 </body>
 </html>
