@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ch-cn">
+<head>
+	<meta charset="utf-8">
+	<title>自定义原型方法、去重、封装typeof</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = 'trioanglsdjfpoitnzbxc';
+
+		function test(str) {
+			var temp = {};
+
+			for (var i = 0; i < str.length; i++) {
+				if (temp.hasOwnProperty(str[i])) {
+					temp[str[i]]++;
+				}else{
+					temp[str[i]] = 1;
+				}
+			}
+
+			for (var key in temp) {
+				if (temp[key] === 1)
+					return key;
+			}
+		}
+		console.log(test(str));
+	</script>
+</body>
+</html>

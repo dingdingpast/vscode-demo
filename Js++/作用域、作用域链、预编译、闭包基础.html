@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>none</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//[[scope]] 作用域  Scope Chain 作用域链
+		//1.形参和变量声明
+		//2.实参值赋给形参
+		//3.寻找函数声明
+		//4.执行函数
+		/*
+		 * GO  -> 全局执行期上下文
+		 * AO　-> 函数的执行期上下文 function 独立的仓库 即时的储存容器  函数执行完成后AO销毁
+		 * 
+		 */
+		 function sunSched(){
+		 	var sunSched = '';
+
+		 	var operation = {
+		 		setSched: function(thing){
+		 			sunSched = thing;
+		 		},
+		 		showSched: function(){
+		 			console.log('My schedule on sunday is ' + sunSched);
+		 		}
+		 	}
+
+		 	return operation;
+		 }
+
+		 var sunSched = sunSched();
+
+		 sunSched.setSched('studying');
+		 sunSched.setSched('walking');
+		 sunSched.showSched();
+	</script>
+</body>
+</html>

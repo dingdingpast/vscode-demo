@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则表达式学习</title>
+</head>
+<body>
+<script type="text/javascript">
+	//写法 
+	var exp = /at/gim;
+	console.log(/[0-9A-Za-z]/.test('a'));
+    // 空格是有明确意义的
+    // 元字符 -> \ . () [] [^] ? * + {min,max} ^ $
+   	//  \D -> [^0-9]
+	//  \s -> [\f\n\r\t] space
+	//  \S -> [^\f\\r\t] 非空格
+	//  \w [0-9A-Za-z_] 字母 数字 下划线
+	//  \W [^0-9A-Za-z_]
+	console.log(/\d{6,}/.exec(1234567890));
+	// ？ {0，1} 只要有一个
+	// * {0，} 任意个数
+	// + {1，} 最少一个
+	console.log(/https?/.test('http'));
+	// | -> 分组；
+	//var reg = /^(((00)?\d|(0)?[1-9]\d|1\d{2}|2[0-4]\d|25[0-5])\.){3}((00)?\d|(0)?[1-9]\d|1\d{2}|2[0-4]\d|25[0-5]))\$);
+	//console.log(reg.exec('192.168.1.1'));
+	console.log(/3[01]|[12]\d|\d/.exec('32'));
+	// 断言；
+	// \b -> 单词边界； \B
+	console.log(/\ban\b/.exec('an apple'));
+	console.log(/\ban\b/.exec('anapple'));
+</script>
+</body>
+</html>
